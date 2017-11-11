@@ -14,8 +14,8 @@ makeCacheMatrix <- function( m = matrix() ) {
   }
  
   ## Return matrix
-  getMat <- function() {
-  m
+  get <- function() {
+   	m
   }
  
   ## Inverse  matrix
@@ -32,7 +32,6 @@ makeCacheMatrix <- function( m = matrix() ) {
   ## Return a list of the methods
   list(set = set, get = get, getInv = getInv, setInv = setInv   )
 }
- 
 
 
 ## Write a short comment describing this function
