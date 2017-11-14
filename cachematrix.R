@@ -1,7 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+ 
+ ## the objective is manage a matrix  
 
 makeCacheMatrix <- function( m = matrix() ) {
  
@@ -15,7 +13,7 @@ makeCacheMatrix <- function( m = matrix() ) {
  
   ## Return matrix
   get <- function() {
-   	m
+	m
   }
  
   ## Inverse  matrix
@@ -32,14 +30,14 @@ makeCacheMatrix <- function( m = matrix() ) {
   ## Return a list of the methods
   list(set = set, get = get, getInv = getInv, setInv = setInv   )
 }
+ 
 
-
-## Write a short comment describing this function
+ 
+## the objective is returns the inverse of a matrix  
 
 cacheSolve <- function(object, ...) {
-        ## Return a matrix that is the inverse of 'x'
- 
-  matrix <- object$getInverse()
+  ## Return a matrix that is the inverse of 'x'
+  matrix <- object$getInv()
    
   ## if ok return matrix
   if( !is.null(matrix) ) {
@@ -51,8 +49,8 @@ cacheSolve <- function(object, ...) {
    
   ## Matrix calculation
   objMat <- object$get()
-  matrix <- solve(objMat) %*% objMat
+  new <- solve(objMat, ...)
   ## Modify result & return 
-  object$setInverse(matrix)
-  matrix
+  object$setInv(new)
+  new
 }
